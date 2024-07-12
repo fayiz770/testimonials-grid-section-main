@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    
+    --moderate-violet: rgba(117,65,200,1);
+    --maded-color: rgba(255, 255, 255, 0.5);
+    --maded-color-text: rgba(255, 255, 255, 0.7);
+    --very-dark-grayish-blue: rgba(72,85,106,1.000);
+    --very-dark-blackish-blue: rgba(25,33,46,1.000);
+    --light-gray: rgba(207,207,207,1.000);
+    --light-grayish-blue: 	rgba(236,242,248,1.000);
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    padding: 4em 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    background-color: var(--light-grayish-blue);
+}
+
+article {
+    color: white;
+    padding: 2em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    box-shadow: 2px 2px 50px gray;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.profile :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+}
+
+.profile-picture {
+    border: 5px solid var(--maded-color);
+    border-radius: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+
+.daniel {
+    background-color: var(--moderate-violet);
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right 2em;
+}
+
+
+.jonathan {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.jeanette,
+.kira {
+    color: var(--very-dark-grayish-blue);
+    background-color: white;
+}
+
+.jeanette .verified,
+.jeanette .profile-picture,
+.kira .profile-picture,
+.kira .verified {
+    color: rgba(72,85,106, 0.5);
+}
+
+.jeanette .text,
+.kira .text {
+    color: rgba(72, 85, 106, 0.7);
+}
+
+
+.patrick {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+
+.verified {
+    color: var(--maded-color);
+}
+
+.text {
+    color: var(--maded-color-text);
+}
+
+
+@media (min-width: 768px){
+
+    .daniel {
+        grid-area: dan;
+    }
+
+    .jonathan {
+        grid-area: jon;
+    }
+
+    .jeanette {
+        grid-area: jea;
+    }
+
+    .patrick {
+        grid-area: pat;
+    }
+
+    .kira {
+        grid-area: kir;
+    }
+
+    body {
+        height: 100vh;
+        padding: 10em 10em;
+        grid-template-columns: repeat(12, minmax(70px, 1fr));
+        grid-template-areas: 
+            "dan dan dan dan dan dan jon jon jon kir kir kir"
+            "jea jea jea pat pat pat pat pat pat kir kir kir"
+        ;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}
